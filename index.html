@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Special Login ❤️</title>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg,#ff758c,#ff7eb3);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .box{
+      background:#fff;
+      padding:30px;
+      border-radius:20px;
+      width:90%;
+      max-width:400px;
+      box-shadow:0 15px 30px rgba(0,0,0,0.3);
+    }
+    h2,h3{
+      text-align:center;
+      color:#ff2f68;
+    }
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin:10px 0;
+      border-radius:10px;
+      border:1px solid #ccc;
+      font-size:16px;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:20px;
+      background:#ff2f68;
+      color:#fff;
+      font-size:18px;
+      cursor:pointer;
+    }
+    button:hover{background:#e6004c;}
+    .hidden{display:none;}
+    .display{
+      background:#ffe6ee;
+      padding:15px;
+      border-radius:10px;
+      min-height:60px;
+    }
+  </style>
+</head>
+<body><div class="box" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" id="uid" placeholder="User ID">
+  <input type="password" id="pwd" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div><div class="box hidden" id="ujwalaBox">
+  <h3>Hello Ujwala Madam, Welcome ❤️</h3>
+  <p>Mee gurinchi Uday sir chepparu 😊<br>
+  Mee sandeshani type cheyandi👇</p>
+  <textarea id="ujwalaMsg" placeholder="Type here..."></textarea>  <h4>Chinna questions 🥰</h4>
+  <p>1️⃣ Mee life lo happiest moment enti?</p>
+  <textarea></textarea>
+  <p>2️⃣ Nenu ante mee first feeling enti?</p>
+  <textarea></textarea>
+  <p>3️⃣ Naa pakkana future imagine cheyagalara?</p>
+  <textarea></textarea>
+</div><div class="box hidden" id="bunnyBox">
+  <h3>Ujwala Message Live ❤️</h3>
+  <div class="display" id="liveDisplay">Waiting for her message...</div>
+</div><script>
+  function login(){
+    const id = document.getElementById('uid').value;
+    const pwd = document.getElementById('pwd').value;
+
+    if(id === 'ujwala sai' && pwd === '2009'){
+      document.getElementById('loginBox').classList.add('hidden');
+      document.getElementById('ujwalaBox').classList.remove('hidden');
+    }
+    else if(id === 'bunny' && pwd === '2005'){
+      document.getElementById('loginBox').classList.add('hidden');
+      document.getElementById('bunnyBox').classList.remove('hidden');
+    }
+    else{
+      alert('Wrong ID or Password');
+    }
+  }
+
+  document.addEventListener('input',function(){
+    const msg = document.getElementById('ujwalaMsg');
+    const display = document.getElementById('liveDisplay');
+    if(msg && display){
+      display.innerText = msg.value || 'Waiting for her message...';
+    }
+  });
+</script></body>
+</html>
